@@ -4,7 +4,7 @@ const navMenu = document.getElementById('nav-menu'),
       navClose = document.getElementById('nav-close')
 
 /*===== MENU SHOW =====*/
-/* Проверьте, существует ли константа */
+/* Проверьте, существует ли константа открыть меню */
 if(navToggle){
   navToggle.addEventListener('click', () =>{
     navMenu.classList.add('show-menu')
@@ -29,3 +29,15 @@ function linkAction() {
   navMenu.classList.remove('show-menu')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
+
+
+
+/*=============== CHANGE BACKGROUND HEADER - появление тени под header при прокрутке ===============*/
+function scrollHeader(){
+  const header = document.getElementById('header')
+  //Если высота прокрутки превышает 80 дюймов, добавьте класс заголовка прокрутки в тег заголовка
+  if(this.scrollY >= 80) header.classList.add('scroll-header'); 
+  else header.classList.remove('scroll-header')
+}
+window.addEventListener('scroll', scrollHeader)
+

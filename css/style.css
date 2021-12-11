@@ -136,6 +136,18 @@ img{
   overflow: hidden; /*анимация*/
 }
 
+
+/* SHOW MENU - показать меню */
+.show-menu{
+  right: 0;
+}
+/* CHANGE BACKGROUND HEADER - появление тени под header при прокрутке вниз */
+.scroll-header{
+  box-shadow: 0 1px 4px hsla(var(--hue), 4%, 15%, .1);
+}
+
+
+
 /*=============== HEADER ===============*/
 .header{
   width: 100%;
@@ -222,11 +234,6 @@ img{
 
 .nav__link:hover{
   color: var(--first-color);
-}
-
-/* Show menu - показать меню */
-.show-menu{
-  right: 0;
 }
 
 /*=============== HOME ===============*/
