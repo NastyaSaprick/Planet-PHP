@@ -191,12 +191,40 @@ img{
     width: 80%;
     height: 100%;
     top: 0;
-    right: 0;
+    right: -100%;
     box-shadow: -2px 0 4px hsla(var(--hue), 24%, 15%, .1);
     padding: 4rem 0 0 3rem;
     border-radius: 1rem 0 0 1rem;
     transition: .3s;
     z-index: var(--z-fixed);
   }
-  
+}
+
+.nav__close{
+  font-size: 1.5rem;
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  cursor: pointer;
+}
+
+.nav__list{
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.nav__link{
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  transition: .3s;
+}
+
+.nav__link:hover{
+  color: var(--first-color);
+}
+
+/* Show menu - показать меню */
+.show-menu{
+  right: 0;
 }
