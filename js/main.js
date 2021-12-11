@@ -18,3 +18,14 @@ if(navClose){
     navMenu.classList.remove('show-menu')
   })
 }
+
+
+/*=============== REMOVE MENU MOBILE - закрытие окна с меню при нажатии на элемент списка ===============*/
+const navLink = document.querySelectorAll('.nav__link')
+
+function linkAction() {
+  const navMenu = document.getElementById('nav-menu')
+  //Когда мы нажимаем на каждую навигационную ссылку, мы удаляем класс show-menu
+  navMenu.classList.remove('show-menu')
+}
+navLink.forEach(n => n.addEventListener('click', linkAction))
