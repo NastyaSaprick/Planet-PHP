@@ -107,3 +107,35 @@ function scrollUp(){
   else scrollUp.classList.remove('show-scroll')
 }
 window.addEventListener('scroll', scrollUp)
+
+
+
+/*=============== DARK LIGHT THEME - темная тема ===============*/ 
+const themeButton = document.getElementById('theme-button')
+const darkTheme = 'dark-theme'
+const iconTheme = 'ri-sun-line'
+
+// Ранее выбранная тема (если выбран пользователь)
+const selectedTheme = localStorage.getItem('selected-theme')
+const selectedIcon = localStorage.getItem('selected-icon')
+
+// Мы получаем текущую тему интерфейса, проверяя класс темной темы
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
+const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moon-line' : 'ri-sun-line'
+
+// Мы проверяем, выбрал ли пользователь ранее тему
+if (selectedTheme) {
+  // Если проверка выполнена, мы спрашиваем, в чем была проблема, чтобы узнать, активировали мы или деактивировали темную
+  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+  themeButton.classList[selectedIcon === 'ri-moon-line' ? 'add' : 'remove'](iconTheme)
+}
+
+// Активируйте/деактивируйте тему вручную с помощью кнопки
+themeButton.addEventListener('click', () => {
+    // Добавление или удаление темной темы/значка
+    document.body.classList.toggle(darkTheme)
+    themeButton.classList.toggle(iconTheme)
+    // Мы сохраняем тему и текущую иконку, которую выбрал пользователь
+    localStorage.setItem('selected-theme', getCurrentTheme())
+    localStorage.setItem('selected-icon', getCurrentIcon())
+})
